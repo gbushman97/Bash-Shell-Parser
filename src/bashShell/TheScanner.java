@@ -17,7 +17,19 @@ public class TheScanner {
             String temp = sent.next();
             switch (temp) {
                 case "cat":
-                    //other cases for FNames
+                case "ls":
+                case "pwd":
+                case "touch":
+                case "cp":
+                case "mv":
+                case "rm":
+                case "chmod":
+                case "man":
+                case "ps":
+                case "bg":
+                case "mkdir":
+                case "cd":
+                case "test":
                     tokens.add(Token.FName);
                     break;
                 case "=":
@@ -54,7 +66,7 @@ public class TheScanner {
                     tokens.add(Token.EOT);
                     break;
                 default:
-                    if (temp.matches("[a-zA-Z][a-zA-Z0-9_]*")){
+                    if (temp.matches("[a-zA-Z][a-zA-Z0-9_.]*")){
                         tokens.add(Token.VAR);
                     }
                     else if (temp.matches("-?[a-zA-Z0-9]*|[0-9]")){
@@ -78,9 +90,15 @@ public class TheScanner {
         else return Token.EOT;
     }
 
-    public static void main(String [] args){
-        Parser ts = new Parser("abc = cat eol");
+        public static void main (String[]args){
+        while(true) {
+            System.out.println("Enter you Bash Shell Script Here");
+            System.out.print(">>");
+            Scanner in = new Scanner(System.in);
+            Parser ts = new Parser(in.nextLine());
+        }
     }
+
 
 
 }

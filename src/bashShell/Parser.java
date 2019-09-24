@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class Parser {
     private Byte currentToken = null;
     private TheScanner thescanner = null;
+    private boolean errorOccured = false;
 
     //------------- Utility Methods -------------
 
@@ -23,6 +24,7 @@ public class Parser {
         else
             writeError("Expected:  " + Token.kindString(expectedKind) +
                     "Found :" + Token.kindString(currentToken));
+            errorOccured = true;
     }
 
     /**
@@ -42,6 +44,9 @@ public class Parser {
         thescanner = new TheScanner(sentence);
         currentToken = thescanner.nextToken();
         parseScript();
+        if(!errorOccured){
+            System.out.println("This is a legal script");
+        }
     }
 
     //---------------- Parsing Methods ---------------
