@@ -4,6 +4,7 @@ public class Token {
     public byte kind;
     public String spelling;
 
+    //list of different types of tokens
     public final static byte FName = 0;
     public final static byte LIT = 1;
     public final static byte VAR = 2;
@@ -27,6 +28,7 @@ public class Token {
             "<eot>", "<command>", "<argument>"
     };
 
+    //method to return what kind of token something is
     public static String kindString(byte kind) {
         return spellings[kind];
     }
