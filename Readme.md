@@ -1,4 +1,6 @@
-#BashShell Parser
+#BashShell Parser and AST Generator
 #Directions for running the program:
-The program takes input through the console. Just type your input next to the ">>" without
-any quotes or anything like that. The program is set to run and take consecutive inputs until the user stops the process.
+The program takes input from a .sh file. To run the program just copy the path of the .sh file 
+you want to use into the arguments of the program. To see the final AST you need to 
+provide an argument of either -p to write it to a file name bckup.ast or -d to 
+print the ast to the screen. 
