@@ -1,0 +1,31 @@
+Script 
+ Seq Command 
+  Assign Command 
+   Var Arg [file1]
+   Var Arg [stuff1.txt]
+  Seq Command 
+   Assign Command 
+    Var Arg [file2]
+    Var Arg [stuff2.c]
+   Seq Command 
+    Assign Command 
+     Var Arg [file3]
+     Var Arg [stuff3.java]
+    For Command 
+     Var Arg [file]
+     Seq Arg 
+      Var Arg [file1]
+      Seq Arg 
+       Var Arg [file2]
+       Var Arg [file3]
+     If Command 
+      Fname Arg [test]
+      Seq Arg 
+       Literal Arg [-e]
+       Var Arg [file]
+      Exec Command 
+       Fname Arg [cp]
+       Seq Arg 
+        Var Arg [file]
+        Var Arg [bck]
+      Null Command 
